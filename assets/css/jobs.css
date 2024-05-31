@@ -1,0 +1,109 @@
+header.header {
+    height: 70px;
+}
+
+/* Add top padding to the main element */
+header.header {
+    height: 70px;
+}
+
+/* Add top padding to the main element */
+main.main {
+    padding-top: 80px;
+}
+
+/* Filter Sidebar Styles */
+#filter-sidebar {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 100%;
+}
+
+#filter-sidebar h4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#filter-sidebar h5 {
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#filter-sidebar .form-check {
+    margin-bottom: 10px;
+}
+
+#filter-sidebar .form-check-label {
+    font-weight: 400;
+}
+
+#filter-sidebar .btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#job-list {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+/* Job Item Styles */
+#job-list .job-item {
+    margin-bottom: 20px;
+}
+
+#job-list .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#job-list .card .card-body {
+    padding: 15px;
+}
+
+#job-list .card .card-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#job-list .card .card-text {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+#job-list .card img {
+    max-width: 80px;
+    max-height: 80px;
+}
+.search-bar {
+    background-color: #001f3f; /* Navy background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    flex: 1;
+}
+
+.search-button {
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    font-weight: bold;
+}
+
+.search-input::placeholder {
+    color: #6c757d;
+}
