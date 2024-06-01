@@ -252,6 +252,7 @@
                         <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
                         <i class="bi bi-currency-dollar"></i> ${job.salary}
                     </small>
+                    
                 </p>
             </div>
                 </div>
