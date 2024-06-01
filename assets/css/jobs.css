@@ -69,9 +69,15 @@ main.main {
     font-weight: 600;
 }
 
+
+.job-details {
+    color: rgb(122, 122, 122);
+}
+
 #job-list .card .card-text {
-    font-size: 14px;
-    color: #6c757d;
+    font-size: 16px;
+    color: #181819;
+    font-weight: bold;
 }
 
 #job-list .card img {
