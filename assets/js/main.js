@@ -243,11 +243,17 @@
                   <img src="assets/img/logo.png" class="img-fluid rounded-start" alt="Company Logo">
                 </div>
                 <div class="col-md-10">
-                  <div class="card-body">
-                    <h5 class="card-title">${job.title}</h5>
-                    <p class="card-text">${job.company}</p>
-                    <p class="card-text"><small class="text-muted">${job.location} | ${job.degree_requirement} | ${job.salary}</small></p>
-                  </div>
+                <div class="card-body">
+                <h5 class="card-title">${job.title}</h5>
+                <p class="card-text">${job.company}</p>
+                <p class="card-text">
+                    <small class="job-details">
+                        <i class="bi bi-geo-alt"></i> ${job.location}
+                        <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
+                        <i class="bi bi-currency-dollar"></i> ${job.salary}
+                    </small>
+                </p>
+            </div>
                 </div>
               </div>
             </div>

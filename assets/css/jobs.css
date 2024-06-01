@@ -69,13 +69,9 @@ main.main {
     font-weight: 600;
 }
 
-small.text-muted {
-    background: #8ad0e6;
-    border-radius: 29px;
-    height: 40%; 
-    display: inline-block; 
-    padding: 10px; 
-    font-weight: bold;
+
+.job-details {
+    color: rgb(122, 122, 122);
 }
 
 #job-list .card .card-text {
