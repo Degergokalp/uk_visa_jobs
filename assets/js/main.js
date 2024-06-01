@@ -246,7 +246,7 @@
                   <div class="card-body">
                     <h5 class="card-title">${job.title}</h5>
                     <p class="card-text">${job.company}</p>
-                    <p class="card-text"><small class="text-muted">${job.location} | ${job.degree_requirement} | £${job.salary}</small></p>
+                    <p class="card-text"><small class="text-muted">${job.location} | ${job.degree_requirement} | ${job.salary}</small></p>
                   </div>
                 </div>
               </div>
