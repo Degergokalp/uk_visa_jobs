@@ -172,61 +172,12 @@
       .then(response => response.json())
       .then(data => {
         const jobs = data.jobs;
-        populateFilters(jobs);
         populateJobs(jobs);
   
-        const locationFilter = document.getElementById('location-filter');
-        const degreeFilter = document.getElementById('degree-filter');
-        const typeFilter = document.getElementById('type-filter');
-  
-        if (locationFilter) {
-          locationFilter.addEventListener('change', () => filterJobs(jobs));
-        }
-        if (degreeFilter) {
-          degreeFilter.addEventListener('change', () => filterJobs(jobs));
-        }
-        if (typeFilter) {
-          typeFilter.addEventListener('change', () => filterJobs(jobs));
-        }
+        const applyFiltersButton = document.getElementById('apply-filters-button');
+        applyFiltersButton.addEventListener('click', () => filterJobs(jobs));
       })
       .catch(error => console.error('Error loading jobs:', error));
-  
-    function populateFilters(jobs) {
-      const locationSet = new Set(jobs.map(job => job.location));
-      const degreeSet = new Set(jobs.map(job => job.degree_requirement));
-      const typeSet = new Set(jobs.map(job => job.job_type));
-  
-      const locationFilter = document.getElementById('location-filter');
-      const degreeFilter = document.getElementById('degree-filter');
-      const typeFilter = document.getElementById('type-filter');
-  
-      if (locationFilter) {
-        locationSet.forEach(location => {
-          const option = document.createElement('option');
-          option.value = location;
-          option.text = location;
-          locationFilter.appendChild(option);
-        });
-      }
-  
-      if (degreeFilter) {
-        degreeSet.forEach(degree => {
-          const option = document.createElement('option');
-          option.value = degree;
-          option.text = degree;
-          degreeFilter.appendChild(option);
-        });
-      }
-  
-      if (typeFilter) {
-        typeSet.forEach(type => {
-          const option = document.createElement('option');
-          option.value = type;
-          option.text = type;
-          typeFilter.appendChild(option);
-        });
-      }
-    }
   
     function populateJobs(jobs) {
       const jobList = document.getElementById('job-list');
@@ -243,18 +194,18 @@
                   <img src="assets/img/logo.png" class="img-fluid rounded-start" alt="Company Logo">
                 </div>
                 <div class="col-md-10">
-                <div class="card-body">
-                <h5 class="card-title">${job.title}</h5>
-                <p class="card-text">${job.company}</p>
-                <p class="card-text">
-                    <small class="job-details">
+                  <div class="card-body">
+                    <h5 class="card-title">${job.title}</h5>
+                    <p class="card-text">${job.company}</p>
+                    <p class="card-text">
+                      <small class="job-details">
                         <i class="bi bi-geo-alt"></i> ${job.location}
                         <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
                         <i class="bi bi-currency-dollar"></i> ${job.salary}
-                    </small>
-                    
-                </p>
-            </div>
+                        <i class="bi bi-briefcase"></i> ${job.job_type}
+                      </small>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,18 +216,34 @@
     }
   
     function filterJobs(jobs) {
-      const locationFilter = document.getElementById('location-filter').value;
-      const degreeFilter = document.getElementById('degree-filter').value;
-      const typeFilter = document.getElementById('type-filter').value;
+      const selectedDegrees = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+        .filter(input => input.id.startsWith('degree'))
+        .map(input => input.nextElementSibling.textContent);
+  
+      const selectedIndustries = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+        .filter(input => input.id.startsWith('industry'))
+        .map(input => input.nextElementSibling.textContent);
+  
+      const selectedLocations = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+        .filter(input => input.id.startsWith('location'))
+        .map(input => input.nextElementSibling.textContent);
+  
+      const selectedSuitables = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+        .filter(input => input.id.startsWith('suitable'))
+        .map(input => input.nextElementSibling.textContent);
   
       const filteredJobs = jobs.filter(job => {
-        return (locationFilter === '' || job.location === locationFilter) &&
-               (degreeFilter === '' || job.degree_requirement === degreeFilter) &&
-               (typeFilter === '' || job.job_type === typeFilter);
+        const degreeMatch = selectedDegrees.length === 0 || selectedDegrees.includes(job.degree_requirement);
+        const industryMatch = selectedIndustries.length === 0 || selectedIndustries.includes(job.job_type); // Adjusted for job_type instead of job_industry
+        const locationMatch = selectedLocations.length === 0 || selectedLocations.includes(job.location);
+        const suitableMatch = selectedSuitables.length === 0 || selectedSuitables.includes(job.company); // Adjusted to use 'company' as a suitable match example
+  
+        return degreeMatch && industryMatch && locationMatch && suitableMatch;
       });
   
       populateJobs(filteredJobs);
     }
   });
 
-})();
+    
+})();  
