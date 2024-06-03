@@ -175,7 +175,10 @@
         populateJobs(jobs);
   
         const applyFiltersButton = document.getElementById('apply-filters-button');
+        const searchButton = document.getElementById('search-button');
+  
         applyFiltersButton.addEventListener('click', () => filterJobs(jobs));
+        searchButton.addEventListener('click', () => searchJobs(jobs));
       })
       .catch(error => console.error('Error loading jobs:', error));
   
@@ -243,7 +246,16 @@
   
       populateJobs(filteredJobs);
     }
+  
+    function searchJobs(jobs) {
+      const searchInput = document.getElementById('search-input').value.toLowerCase();
+      const filteredJobs = jobs.filter(job => {
+        return job.title.toLowerCase().includes(searchInput) || job.company.toLowerCase().includes(searchInput);
+      });
+  
+      populateJobs(filteredJobs);
+    }
   });
+  
 
-    
 })();  
