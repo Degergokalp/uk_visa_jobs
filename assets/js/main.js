@@ -166,6 +166,26 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+  document.addEventListener('DOMContentLoaded', function () {
+    const applyFiltersButton = document.getElementById('apply-filters-button');
+    const viewFiltersButton = document.getElementById('view-filters');
+    const closeFiltersButton = document.getElementById('close-filters');
+    const filterSidebar = document.getElementById('filter-sidebar');
+
+    viewFiltersButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        filterSidebar.classList.add('active');
+    });
+
+    closeFiltersButton.addEventListener('click', function () {
+      
+        filterSidebar.classList.remove('active');
+    });
+    applyFiltersButton.addEventListener('click', function () {
+      
+        filterSidebar.classList.remove('active');
+    });
+});
 
   document.addEventListener('DOMContentLoaded', function() {
     fetch('jobs/jobs.json')

@@ -7,23 +7,23 @@
     <title>Index - QuickStart Bootstrap Template</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-  
+
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/jobs.css" rel="stylesheet">
@@ -76,16 +76,23 @@
     <main class="main d-flex justify-content-center mt-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-9"> <!-- 70% width using col-9 -->
+                <div class="col-12"> <!-- Changed to full width on mobile -->
                     <div class="search-bar mb-4 d-flex justify-content-center">
                         <input type="text" id="search-input" class="form-control search-input" placeholder="Job, Company, Location">
                         <button id="search-button" class="btn btn-primary search-button">Search Now</button>
-                      </div>
-                      
+                    </div>
+                    <div class="view-filters-class">
+                        <a href="#" id="view-filters" class="view-filters d-flex align-items-center justify-content-center">
+                            <i class="bi bi-funnel-fill"></i> View Filters
+                        </a>
+                    </div>
+                   
                     <div class="d-flex">
                         <div id="filter-sidebar" class="col-md-3">
+                            <button id="close-filters" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+
                             <h4>Visa Jobs</h4>
-    
+
                             <h5>Degree Requirement</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="degree1">
@@ -111,7 +118,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="degree6">
                                 <label class="form-check-label" for="degree6">PhD</label>
                             </div>
-    
+
                             <h5>Job Industry</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="industry1">
@@ -130,7 +137,7 @@
                                 <label class="form-check-label" for="industry4">Consulting</label>
                             </div>
                             <a href="#">View All</a>
-    
+
                             <h5>Location</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="location1">
@@ -153,7 +160,7 @@
                                 <label class="form-check-label" for="location5">London</label>
                             </div>
                             <a href="#">View All</a>
-    
+
                             <h5>Suitable For</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="suitable1">
@@ -163,13 +170,13 @@
                                 <input class="form-check-input" type="checkbox" value="" id="suitable2">
                                 <label class="form-check-label" for="suitable2">Applicants based outside the UK</label>
                             </div>
-    
+
                             <button id="apply-filters-button" class="btn btn-primary">Apply Filters</button>
 
                         </div>
-    
+
                         <div id="job-list" class="col-md-9">
-                                <!-- comes from main.js -->
+                            <!-- comes from main.js -->
 
                         </div>
                     </div>
@@ -177,8 +184,6 @@
             </div>
         </div>
     </main>
-    
-    
 
     <footer id="footer" class="footer position-relative">
         <div class="container footer-top">
@@ -245,7 +250,8 @@
     </footer>
 
     <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- Scroll Top 
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 
     <!-- Preloader -->
     <div id="preloader"></div>

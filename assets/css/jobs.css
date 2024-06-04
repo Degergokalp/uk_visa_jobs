@@ -113,3 +113,72 @@ main.main {
 .search-input::placeholder {
     color: #6c757d;
 }
+@media (min-width: 768px) {
+    .view-filters-class { 
+        display: none;
+    }
+    close-filters {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    #view-filters {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        left: 10%;
+        width: 80%;
+        height: 50px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 25px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        text-align: center;
+    }
+    #filter-sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 20px;    }
+
+    #filter-sidebar.active {
+            display: block;
+        }
+        #close-filters {
+            display: block;
+        }
+  
+    #job-list {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .search-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #job-list .card img {
+        display: none;
+    }
+  
+    .search-input {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  
+    .search-button {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
