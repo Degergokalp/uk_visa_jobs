@@ -71,7 +71,8 @@ main.main {
 
 
 .job-details {
-    color: rgb(122, 122, 122);
+    color: rgb(236, 227, 227);
+    font-weight: bolder;
 }
 
 #job-list .card .card-text {
