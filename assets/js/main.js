@@ -222,7 +222,7 @@
                       <p class="card-text">${job.company}</p>
                       <p class="card-text">
                         <small class="job-details">
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(400deg, #407767, #00BCD4); color: black; margin-right: 8px;">
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
                             <i class="bi bi-geo-alt"></i> ${job.location}
                           </div>
                           
@@ -234,7 +234,7 @@
                             <i class="bi bi-currency-dollar"></i> ${job.salary}
                           </div>
                           
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(280deg, #514caf, #3f909b); color: white; margin-right: 8px;">
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
                             <i class="bi bi-briefcase"></i> ${job.job_type}
                           </div>
                         </small>
