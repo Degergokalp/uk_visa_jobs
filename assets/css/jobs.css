@@ -77,7 +77,7 @@ main.main {
 
 #job-list .card .card-text {
     font-size: 16px;
-    color: #181819;
+    color: #1e042d;
     font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ main.main {
     max-height: 79px;
 }
 .search-bar {
-    background-color: #001f3f; /* Navy background */
+    background-color: #645d6b; /* Navy background */
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -106,7 +106,7 @@ main.main {
     border: none;
     border-radius: 0 10px 10px 0;
     padding: 10px 20px;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #1e042d; /* Bootstrap primary color */
     color: white;
     font-weight: bold;
 }

@@ -20,7 +20,7 @@
 /* Global Colors */
 :root {
   /* Background Color - This color is applied to the background of the entire website as well as individual sections. */
-  --background-color: #ffffff;
+  --background-color: #eeeeee;
 
   /* Default Color - This is the default color used for the majority of the text content. */
   --default-color: #3d4348;
@@ -29,7 +29,7 @@
   --heading-color: #3e5055;
 
   /* Accent Color - This is the main accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out. */
-  --accent-color: #388da8;
+  --accent-color: #1e042d;
 
   /* Contrast Color - This is a color used for text when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors. */
   --contrast-color: #ffffff;
@@ -38,10 +38,10 @@
 /* Nav Menu Colors */
 :root {
   /* Nav Color - This is the default color of the main navmenu links. */
-  --nav-color: #313336;
+  --nav-color: #626262;
 
   /* Nav Hover Color - This color is applied to main navmenu links when they are hovered over. */
-  --nav-hover-color: #77b6ca;
+  --nav-hover-color: #1e042d;
 
   /* Nav Dropdown Background Color - This color is used as the background for dropdown boxes that appear when hovering over primary navigation items. */
   --nav-dropdown-background-color: #ffffff;
@@ -50,7 +50,7 @@
   --nav-dropdown-color: #313336;
 
   /* Nav Dropdown Hover Color - Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-  --nav-dropdown-hover-color: #77b6ca;
+  --nav-dropdown-hover-color: #3d4348;
 }
 
 /* Smooth scroll */
@@ -71,11 +71,13 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
+  
 }
 
 a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
+  font-weight: 650 !important;
 }
 
 h1,
@@ -225,6 +227,7 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+    font-weight: 600  !important;
   }
 
   .navmenu .dropdown ul {
@@ -397,6 +400,7 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-dropdown-hover-color);
+    font-weight: 750;
   }
 
   .navmenu .active i,
