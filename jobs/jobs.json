@@ -1,76 +1,77 @@
 {
     "jobs": [
       {
-        "title": "Senior Product Manager, Search & Conversational Shopping",
-        "company": "Amazon",
-        "location": "London",
-        "salary": "55000 - 88000 / Yearly",
+        "title": "Senior Programmatic Display Manager",
+        "company": "Artefact",
+        "location": "London, England, United Kingdom",
+        "salary": "Competitve Salary",
         "degree_requirement": "Not Specified",
-        "job_type": "Graduate"
+        "job_type": "Full Time"
       },
       {
-        "title": "Associate, German Speaker (2024 Start Dates)",
-        "company": "Third Bridge",
-        "location": "London",
-        "salary": "32000 - 38000 / Yearly",
+        "title": "Senior Programmatic Manager",
+        "company": "Artefact",
+        "location": "London, England, United Kingdom",
+        "salary": "Competitve Salary",
         "degree_requirement": "Not Specified",
-        "job_type": "Entry Level"
+        "job_type": "Full Time"
       },
       {
-        "title": "Facilities Supervisor",
-        "company": "Sygnature Discovery",
-        "location": "Other",
-        "salary": "Competitive",
-        "degree_requirement": "No Minimum",
-        "job_type": "Mid-Senior"
+        "title": "Programmatic Account Director",
+        "company": "Artefact",
+        "location": "London, England, United Kingdom",
+        "salary": "Competitve Salary",
+        "degree_requirement": "Not Specified",
+        "job_type": "Full Time"
       },
       {
-        "title": "German Speaking Pension and Benefits Analyst (HR)",
-        "company": "Language Matters",
-        "location": "London",
-        "salary": "55000 - 60000 / Yearly",
-        "degree_requirement": "2:1",
-        "job_type": "Associate"
+        "title": "Display Account Director",
+        "company": "Artefact",
+        "location": "London, England, United Kingdom",
+        "salary": "Competitve Salary",
+        "degree_requirement": "Not Specified",
+        "job_type": "Full Time"
       },
       {
-        "title": "PLC / DCS Electrical Design Engineer (Sponsorship Available)",
-        "company": "Ernest Gordon Recruitment",
-        "location": "Other",
-        "salary": "40000 - 50000 / Yearly",
-        "degree_requirement": "PhD",
-        "job_type": "Mid-Senior"
+        "title": "Associate Consultant - Commercial Analytics",
+        "company": "Trinity Life Sciences",
+        "location": "Waltham, MA",
+        "salary": "$87.5K/yr - $95K/yr",
+        "degree_requirement": "Not Specified",
+        "job_type": "Consulting"
       },
       {
-        "title": "Maintenance Supervisor Manufacturing VISA SPONSORSHIP PROVIDED",
-        "company": "Proactive Global",
-        "location": "London",
-        "salary": "40000 - 42000 / Yearly",
-        "degree_requirement": "No Minimum",
-        "job_type": "Mid-Senior"
+        "title": "Senior Affiliate Account Manager",
+        "company": "Artefact",
+        "location": "London, England, United Kingdom",
+        "salary": "Competitve Salary",
+        "degree_requirement": "Not Specified",
+        "job_type": "Full Time"
       },
       {
-        "title": "Lead Project Manager - Hardware",
-        "company": "Ocado Group",
-        "location": "Other",
-        "salary": "30000 - 47000 / Yearly",
-        "degree_requirement": "2:1",
-        "job_type": "Mid-Senior"
+        "title": "Business Analyst",
+        "company": "Prone Consultant Limited",
+        "location": "London, England, United Kingdom",
+        "salary": "£35K/yr - £42K/yr",
+        "degree_requirement": "Not Specified",
+        "job_type": "Full-time, Entry level"
       },
       {
-        "title": "Graduate Associate, French Speaker (2024 Start Dates)",
-        "company": "Third Bridge",
-        "location": "London",
-        "salary": "37000 / Yearly",
-        "degree_requirement": "2:1",
-        "job_type": "Entry Level"
+        "title": "Associate Consultant, Real World Evidence, Analytics",
+        "company": "Trinity Life Sciences",
+        "location": "Waltham, MA",
+        "salary": "$87.5K/yr",
+        "degree_requirement": "Not Specified",
+        "job_type": "Consulting"
       },
+      
       {
-        "title": "Electrical Engineer (VISA Sponsorship Available)",
-        "company": "Ernest Gordon Recruitment",
-        "location": "Other",
-        "salary": "45000 - 52000 / Yearly",
-        "degree_requirement": "PhD",
-        "job_type": "Mid-Senior"
+        "title": "Consultant, Real World Evidence, Analytics",
+        "company": "Trinity Life Sciences",
+        "location": "Waltham, MA",
+        "salary": "$103K/yr",
+        "degree_requirement": "Not Specified",
+        "job_type": "Consulting/Full-time"
       }
     ]
   }
