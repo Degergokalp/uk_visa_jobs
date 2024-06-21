@@ -211,38 +211,42 @@
             const jobItem = document.createElement('div');
             jobItem.className = 'job-item';
             jobItem.innerHTML = `
-              <div class="card mb-3">
-                <div class="row g-0">
-                  <div class="col-md-2 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/logo.png" class="img-fluid rounded-start" alt="Company Logo">
-                  </div>
-                  <div class="col-md-10">
-                    <div class="card-body">
-                      <h5 class="card-title">${job.title}</h5>
-                      <p class="card-text">${job.company}</p>
-                      <p class="card-text">
-                        <small class="job-details">
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
-                            <i class="bi bi-geo-alt"></i> ${job.location}
-                          </div>
-                          
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
-                            <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
-                          </div>
-                          
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
-                            <i class="bi bi-currency-dollar"></i> ${job.salary}
-                          </div>
-                          
-                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
-                            <i class="bi bi-briefcase"></i> ${job.job_type}
-                          </div>
-                        </small>
-                      </p>
-                    </div>
-                  </div>
+            <div class="card mb-3">
+            <div class="row g-0">
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+              <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
+            </div>
+            
+            
+          
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h5 class="card-title">${job.title}</h5>
+                  <p class="card-text">${job.company}</p>
+                  <p class="card-text">
+                    <small class="job-details">
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
+                        <i class="bi bi-geo-alt"></i> ${job.location}
+                      </div>
+                      
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
+                        <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
+                      </div>
+                      
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
+                        <i class="bi bi-currency-dollar"></i> ${job.salary}
+                      </div>
+                      
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
+                        <i class="bi bi-briefcase"></i> ${job.job_type}
+                      </div>
+                    </small>
+                  </p>
                 </div>
               </div>
+            </div>
+          </div>
+          
             `;
             jobList.appendChild(jobItem);
           });
