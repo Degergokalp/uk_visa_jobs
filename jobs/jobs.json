@@ -1,87 +1,81 @@
 {
-    "jobs": [
-      {
-        "title": "Senior Programmatic Display Manager",
-        "company": "Artefact",
-        "location": "London, England, United Kingdom",
-        "salary": "Competitve Salary",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full Time",
-        "logo_path": "assets/img/images.png"
-      },
-      {
-        "title": "Senior Programmatic Manager",
-        "company": "Artefact",
-        "location": "London, England, United Kingdom",
-        "salary": "Competitve Salary",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full Time",
-        "logo_path": "assets/img/images.png"
-      },
-      {
-        "title": "Programmatic Account Director",
-        "company": "Artefact",
-        "location": "London, England, United Kingdom",
-        "salary": "Competitve Salary",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full Time",
-        "logo_path": "assets/img/images.png"
-      },
-      {
-        "title": "Display Account Director",
-        "company": "Artefact",
-        "location": "London, England, United Kingdom",
-        "salary": "Competitve Salary",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full Time",
-        "logo_path": "assets/img/images.png"
-      },
-      {
-        "title": "Associate Consultant - Commercial Analytics",
-        "company": "Trinity Life Sciences",
-        "location": "Waltham, MA",
-        "salary": "$87.5K/yr - $95K/yr",
-        "degree_requirement": "Not Specified",
-        "job_type": "Consulting",
-        "logo_path": "assets/img/trr.png"
-      },
-      {
-        "title": "Senior Affiliate Account Manager",
-        "company": "Artefact",
-        "location": "London, England, United Kingdom",
-        "salary": "Competitve Salary",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full Time",
-        "logo_path": "assets/img/images.png"
-      },
-      {
-        "title": "Business Analyst",
-        "company": "Prone Consultant Limited",
-        "location": "London, England, United Kingdom",
-        "salary": "£35K/yr - £42K/yr",
-        "degree_requirement": "Not Specified",
-        "job_type": "Full-time, Entry level",
-        "logo_path": "assets/img/pp.jpg"
-      },
-      {
-        "title": "Associate Consultant, Real World Evidence, Analytics",
-        "company": "Trinity Life Sciences",
-        "location": "Waltham, MA",
-        "salary": "$87.5K/yr",
-        "degree_requirement": "Not Specified",
-        "job_type": "Consulting",
-        "logo_path": "assets/img/trr.png"
-      },
-      
-      {
-        "title": "Consultant, Real World Evidence, Analytics",
-        "company": "Trinity Life Sciences",
-        "location": "Waltham, MA",
-        "salary": "$103K/yr",
-        "degree_requirement": "Not Specified",
-        "job_type": "Consulting/Full-time",
-        "logo_path": "assets/img/trr.png"
-      }
-    ]
-  }
-  
+  "jobs": [
+    {
+      "title": "Senior Programmatic Display Manager",
+      "company": "Artefact",
+      "location": "London",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Full Time",
+      "logo_path": "assets/img/images.png",
+      "job_url_path": "https://www.linkedin.com/jobs/view/3773747635/?alternateChannel=search&refId=XI0CMeSBBGGdM13WeW4%2BFg%3D%3D&trackingId=ql7gufah7TWQSdJWSli4cw%3D%3D",
+      "industry": "Technology"
+    },
+    {
+      "title": "Investment Lifecycle Specialist",
+      "company": "Victory Group",
+      "location": "London",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Full-time",
+      "logo_path": "assets/img/vic.jpeg",
+      "job_url_path": "https://victorygroup.com/careers",
+      "industry": "Consulting"
+    },
+    {
+      "title": "Head of Artificial Intelligence",
+      "company": "Bright",
+      "location": "Warwick",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Full-time",
+      "logo_path": "assets/img/bright.jpeg",
+      "job_url_path": "https://brightsg.peoplehr.net/Pages/JobBoard/Opening.aspx?v=a84fc7b4-8761-4b16-aa27-2591763603f9",
+      "industry": "Technology"
+    },
+    {
+      "title": "Senior Programmatic Manager",
+      "company": "Artefact",
+      "location": "London",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Full Time",
+      "logo_path": "assets/img/images.png",
+      "job_url_path": "https://www.linkedin.com/jobs/view/3668056767/?alternateChannel=search&refId=XI0CMeSBBGGdM13WeW4%2BFg%3D%3D&trackingId=6XZsaACiaKjvYHgO%2BVEbDQ%3D%3D",
+      "industry": "Technology"
+    },
+    {
+      "title": "Associate Consultant - Commercial Analytics",
+      "company": "Trinity Life Sciences",
+      "location": "Waltham, MA",
+      "salary": "$87.5K/yr - $95K/yr",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Consulting",
+      "logo_path": "assets/img/trr.png",
+      "job_url_path": "https://www.paycomonline.net/v4/ats/web.php/jobs/ViewJobDetails?job=212000&clientkey=CAE04721499AE1DC87F8CD44325EC4C2",
+      "industry": "Analytics"
+    },
+    {
+      "title": "Senior Affiliate Account Manager",
+      "company": "Artefact",
+      "location": "London",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Bachelors Degree",
+      "job_type": "Full Time",
+      "logo_path": "assets/img/images.png",
+      "job_url_path": "https://www.linkedin.com/jobs/view/3936786455/?alternateChannel=search&refId=XI0CMeSBBGGdM13WeW4%2BFg%3D%3D&trackingId=MvKiY509X2cQQKnnpHEyYA%3D%3D",
+      "industry": "Technology"
+    },
+    {
+      "title": "Customer Success Specialist",
+      "company": "Vital Source",
+      "location": "Milton Keynes",
+      "salary": "Competitive Salary",
+      "degree_requirement": "Not Specified",
+      "job_type": "Full-time",
+      "logo_path": "assets/img/vs.jpeg",
+      "job_url_path": "https://jobs.jobvite.com/careers/vitalsource/job/oue5rfwY/apply?__jvst=job+board&__jvsd=LinkedInLimited",
+      "industry": "Technology"
+    }
+  ]
+}
