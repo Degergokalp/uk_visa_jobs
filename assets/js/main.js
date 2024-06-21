@@ -211,41 +211,41 @@
             const jobItem = document.createElement('div');
             jobItem.className = 'job-item';
             jobItem.innerHTML = `
-            <div class="card mb-3">
-            <div class="row g-0">
-            <div class="col-md-2 d-flex align-items-center justify-content-center">
-              <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
-            </div>
-            
-            
-          
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-title">${job.title}</h5>
-                  <p class="card-text">${job.company}</p>
-                  <p class="card-text">
-                    <small class="job-details">
-                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
-                        <i class="bi bi-geo-alt"></i> ${job.location}
-                      </div>
-                      
-                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
-                        <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
-                      </div>
-                      
-                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
-                        <i class="bi bi-currency-dollar"></i> ${job.salary}
-                      </div>
-                      
-                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
-                        <i class="bi bi-briefcase"></i> ${job.job_type}
-                      </div>
-                    </small>
-                  </p>
-                </div>
+            <a href="${job.job_url_path}" style="text-decoration: none; color: inherit;">
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-2 d-flex align-items-center justify-content-center">
+        <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <h5 class="card-title">${job.title}</h5>
+          <p class="card-text">${job.company}</p>
+          <p class="card-text">
+            <small class="job-details">
+              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
+                <i class="bi bi-geo-alt"></i> ${job.location}
               </div>
-            </div>
-          </div>
+              
+              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
+                <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
+              </div>
+              
+              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
+                <i class="bi bi-currency-dollar"></i> ${job.salary}
+              </div>
+              
+              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
+                <i class="bi bi-briefcase"></i> ${job.job_type}
+              </div>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
           
             `;
             jobList.appendChild(jobItem);
@@ -272,7 +272,7 @@
   
       const filteredJobs = jobs.filter(job => {
         const degreeMatch = selectedDegrees.length === 0 || selectedDegrees.includes(job.degree_requirement);
-        const industryMatch = selectedIndustries.length === 0 || selectedIndustries.includes(job.job_type); // Adjusted for job_type instead of job_industry
+        const industryMatch = selectedIndustries.length === 0 || selectedIndustries.includes(job.industry); // Adjusted for job_type instead of job_industry
         const locationMatch = selectedLocations.length === 0 || selectedLocations.includes(job.location);
         const suitableMatch = selectedSuitables.length === 0 || selectedSuitables.includes(job.company); // Adjusted to use 'company' as a suitable match example
   
