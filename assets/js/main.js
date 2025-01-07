@@ -187,110 +187,272 @@
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('jobs/jobs.json')
-      .then(response => response.json())
-      .then(data => {
-        const jobs = data.jobs;
-        populateJobs(jobs);
-  
-        const applyFiltersButton = document.getElementById('apply-filters-button');
-        const searchButton = document.getElementById('search-button');
-  
-        applyFiltersButton.addEventListener('click', () => filterJobs(jobs));
-        searchButton.addEventListener('click', () => searchJobs(jobs));
-      })
-      .catch(error => console.error('Error loading jobs:', error));
-  
-      function populateJobs(jobs) {
-        const jobList = document.getElementById('job-list');
-        if (jobList) {
-          jobList.innerHTML = '';
-      
-          jobs.forEach(job => {
-            const jobItem = document.createElement('div');
-            jobItem.className = 'job-item';
-            jobItem.innerHTML = `
-            <a href="${job.job_url_path}" style="text-decoration: none; color: inherit;">
-  <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-2 d-flex align-items-center justify-content-center">
-        <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
-      </div>
-      <div class="col-md-10">
-        <div class="card-body">
-          <h5 class="card-title">${job.title}</h5>
-          <p class="card-text">${job.company}</p>
-          <p class="card-text">
-            <small class="job-details">
-              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
-                <i class="bi bi-geo-alt"></i> ${job.location}
-              </div>
-              
-              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
-                <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
-              </div>
-              
-              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
-                <i class="bi bi-currency-dollar"></i> ${job.salary}
-              </div>
-              
-              <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
-                <i class="bi bi-briefcase"></i> ${job.job_type}
-              </div>
-            </small>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</a>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('jobs/jobs.json')
+    .then(response => response.json())
+    .then(data => {
+      const jobs = data.jobs;
+      populateJobs(jobs);             // Populate job listings
+      populateLocationFilters(jobs);  // Populate location filters dynamically
+      populateIndustryFilters(jobs);  // Populate industry filters dynamically
+      populateDegreeFilters(jobs);    // Populate degree filters dynamically
 
-          
-            `;
-            jobList.appendChild(jobItem);
-          });
-        }
+      // Listen for changes in checkboxes
+      const filterSidebar = document.getElementById('filter-sidebar');
+      filterSidebar.addEventListener('change', () => filterJobs(jobs));
+
+      const searchButton = document.getElementById('search-button');
+      searchButton.addEventListener('click', () => searchJobs(jobs));
+    })
+    .catch(error => console.error('Error loading jobs:', error));
+
+  function populateDegreeFilters(jobs) {
+      const degreeFilterContainer = document.getElementById('degree-filters');
+      const uniqueDegrees = [...new Set(jobs.map(job => job.degree_requirement))]; // Get unique degrees
+  
+      degreeFilterContainer.innerHTML = ''; // Clear existing content
+  
+      uniqueDegrees.forEach((degree, index) => {
+        const degreeCheckbox = document.createElement('div');
+        degreeCheckbox.className = 'form-check';
+        degreeCheckbox.innerHTML = `
+          <input class="form-check-input" type="checkbox" value="${degree}" id="degree${index}">
+          <label class="form-check-label" for="degree${index}">${degree}</label>
+        `;
+        degreeFilterContainer.appendChild(degreeCheckbox);
+      });
+    }
+
+  function populateJobs(jobs) {
+      const jobList = document.getElementById('job-list');
+      if (jobList) {
+        jobList.innerHTML = '';
+  
+        jobs.forEach(job => {
+          const jobItem = document.createElement('div');
+          jobItem.className = 'job-item';
+          jobItem.innerHTML = `
+            <a href="${job.job_url_path}" style="text-decoration: none; color: inherit;">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2 d-flex align-items-center justify-content-center">
+                    <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title">${job.title}</h5>
+                      <p class="card-text">${job.company}</p>
+                      <p class="card-text">
+                        <small class="job-details">
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
+                            <i class="bi bi-geo-alt"></i> ${job.location}
+                          </div>
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
+                            <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
+                          </div>
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
+                            <i class="bi bi-currency-pound"></i> ${job.salary}
+                          </div>
+                          <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
+                            <i class="bi bi-briefcase"></i> ${job.job_type}
+                          </div>
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          `;
+          jobList.appendChild(jobItem);
+        });
       }
-      
-    function filterJobs(jobs) {
-      const selectedDegrees = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
-        .filter(input => input.id.startsWith('degree'))
-        .map(input => input.nextElementSibling.textContent);
-  
-      const selectedIndustries = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
-        .filter(input => input.id.startsWith('industry'))
-        .map(input => input.nextElementSibling.textContent);
-  
-      const selectedLocations = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
-        .filter(input => input.id.startsWith('location'))
-        .map(input => input.nextElementSibling.textContent);
-  
-      const selectedSuitables = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
-        .filter(input => input.id.startsWith('suitable'))
-        .map(input => input.nextElementSibling.textContent);
-  
-      const filteredJobs = jobs.filter(job => {
-        const degreeMatch = selectedDegrees.length === 0 || selectedDegrees.includes(job.degree_requirement);
-        const industryMatch = selectedIndustries.length === 0 || selectedIndustries.includes(job.industry); // Adjusted for job_type instead of job_industry
-        const locationMatch = selectedLocations.length === 0 || selectedLocations.includes(job.location);
-        const suitableMatch = selectedSuitables.length === 0 || selectedSuitables.includes(job.company); // Adjusted to use 'company' as a suitable match example
-  
-        return degreeMatch && industryMatch && locationMatch && suitableMatch;
-      });
-  
-      populateJobs(filteredJobs);
     }
-  
-    function searchJobs(jobs) {
-      const searchInput = document.getElementById('search-input').value.toLowerCase();
-      const filteredJobs = jobs.filter(job => {
-        return job.title.toLowerCase().includes(searchInput) || job.company.toLowerCase().includes(searchInput);
-      });
-  
-      populateJobs(filteredJobs);
+
+  // Dynamically populate location filters based on jobs.json
+  function populateLocationFilters(jobs) {
+    const locationFilterContainer = document.getElementById('location-filters');
+    const uniqueLocations = [...new Set(jobs.map(job => job.location))]; // Get unique locations
+
+    locationFilterContainer.innerHTML = ''; // Clear existing content
+
+    uniqueLocations.forEach((location, index) => {
+      const locationCheckbox = document.createElement('div');
+      locationCheckbox.className = 'form-check';
+      locationCheckbox.innerHTML = `
+        <input class="form-check-input" type="checkbox" value="${location}" id="location${index}">
+        <label class="form-check-label" for="location${index}">${location}</label>
+      `;
+      locationFilterContainer.appendChild(locationCheckbox);
+    });
+  }
+
+  // Dynamically populate industry filters based on jobs.json
+  function populateIndustryFilters(jobs) {
+    const industryFilterContainer = document.getElementById('industry-filters');
+    const uniqueIndustries = [...new Set(jobs.map(job => job.industry))]; // Get unique industries
+
+    industryFilterContainer.innerHTML = ''; // Clear existing content
+
+    uniqueIndustries.forEach((industry, index) => {
+      const industryCheckbox = document.createElement('div');
+      industryCheckbox.className = 'form-check';
+      industryCheckbox.innerHTML = `
+        <input class="form-check-input" type="checkbox" value="${industry}" id="industry${index}">
+        <label class="form-check-label" for="industry${index}">${industry}</label>
+      `;
+      industryFilterContainer.appendChild(industryCheckbox);
+    });
+  }
+
+  function filterJobs(jobs) {
+    const selectedDegrees = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+      .filter(input => input.id.startsWith('degree'))
+      .map(input => input.nextElementSibling.textContent);
+
+    const selectedIndustries = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+      .filter(input => input.id.startsWith('industry'))
+      .map(input => input.nextElementSibling.textContent);
+
+    const selectedLocations = Array.from(document.querySelectorAll('#filter-sidebar input[type="checkbox"]:checked'))
+      .filter(input => input.id.startsWith('location'))
+      .map(input => input.nextElementSibling.textContent);
+
+    // If no filters are selected, show all jobs
+    if (selectedDegrees.length === 0 && selectedIndustries.length === 0 && selectedLocations.length === 0) {
+      populateJobs(jobs);
+      return;
     }
-  });
+
+    const filteredJobs = jobs.filter(job => {
+      const degreeMatch = selectedDegrees.length === 0 || selectedDegrees.includes(job.degree_requirement);
+      const industryMatch = selectedIndustries.length === 0 || selectedIndustries.includes(job.industry);
+      const locationMatch = selectedLocations.length === 0 || selectedLocations.includes(job.location);
+
+      return degreeMatch && industryMatch && locationMatch;
+    });
+
+    populateJobs(filteredJobs);
+  }
+
+  function searchJobs(jobs) {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const filteredJobs = jobs.filter(job => {
+      return job.title.toLowerCase().includes(searchInput) || job.company.toLowerCase().includes(searchInput);
+    });
+
+    populateJobs(filteredJobs);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const JOBS_PER_PAGE = 6; // Number of jobs per page
+  let currentPage = 1; // Track the current page
+
+  fetch('jobs/jobs.json')
+    .then(response => response.json())
+    .then(data => {
+      const jobs = data.jobs;
+      const totalPages = Math.ceil(jobs.length / JOBS_PER_PAGE);
+
+      // Initial load of jobs and pagination
+      displayJobs(jobs, currentPage, JOBS_PER_PAGE);
+      createPaginationControls(totalPages);
+
+      // Listen for pagination clicks
+      const paginationContainer = document.getElementById('pagination-container');
+      paginationContainer.addEventListener('click', function (e) {
+        if (e.target.classList.contains('page-link')) {
+          const selectedPage = parseInt(e.target.dataset.page, 10);
+          currentPage = selectedPage;
+          displayJobs(jobs, currentPage, JOBS_PER_PAGE);
+          updatePaginationControls(totalPages, currentPage);
+        }
+      });
+    })
+    .catch(error => console.error('Error loading jobs:', error));
+
+  function displayJobs(jobs, page, jobsPerPage) {
+    const startIndex = (page - 1) * jobsPerPage;
+    const endIndex = page * jobsPerPage;
+    const paginatedJobs = jobs.slice(startIndex, endIndex);
+    const jobList = document.getElementById('job-list');
+    jobList.innerHTML = '';
+
+    paginatedJobs.forEach(job => {
+      const jobItem = document.createElement('div');
+      jobItem.className = 'job-item';
+      jobItem.innerHTML = `
+        <a href="${job.job_url_path}" style="text-decoration: none; color: inherit;">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-2 d-flex align-items-center justify-content-center">
+                <img src="${job.logo_path}" class="img-fluid rounded-start" alt="Company Logo" style="transform: scale(1.5);">
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h5 class="card-title">${job.title}</h5>
+                  <p class="card-text">${job.company}</p>
+                  <p class="card-text">
+                    <small class="job-details">
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(192deg, #419f44db, #259a38); color: black; margin-right: 8px;">
+                        <i class="bi bi-geo-alt"></i> ${job.location}
+                      </div>
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #FF7043, #FFCA28); color: white; margin-right: 8px;">
+                        <i class="bi bi-mortarboard"></i> ${job.degree_requirement}
+                      </div>
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(45deg, #673AB7, #9C27B0); color: white; margin-right: 8px;">
+                        <i class="bi bi-currency-pound"></i> ${job.salary}
+                      </div>
+                      <div style="display: inline-block; padding: 4px 8px; border-radius: 16px; background: linear-gradient(356deg, #514caf, #3f909b); color: white; margin-right: 8px;">
+                        <i class="bi bi-briefcase"></i> ${job.job_type}
+                      </div>
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      `;
+      jobList.appendChild(jobItem);
+    });
+  }
+
+  function createPaginationControls(totalPages) {
+    const paginationContainer = document.getElementById('pagination-container');
+    paginationContainer.innerHTML = '';
+
+    const paginationList = document.createElement('ul');
+    paginationList.className = 'pagination';
+
+    for (let i = 1; i <= totalPages; i++) {
+      const paginationItem = document.createElement('li');
+      paginationItem.className = 'page-item';
+      paginationItem.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+      paginationList.appendChild(paginationItem);
+    }
+
+    paginationContainer.appendChild(paginationList);
+    updatePaginationControls(totalPages, 1); // Highlight the first page by default
+  }
+
+  function updatePaginationControls(totalPages, currentPage) {
+    const paginationLinks = document.querySelectorAll('.page-link');
+    paginationLinks.forEach(link => {
+      const page = parseInt(link.dataset.page, 10);
+      if (page === currentPage) {
+        link.parentElement.classList.add('active');
+      } else {
+        link.parentElement.classList.remove('active');
+      }
+    });
+  }
+});
+
+
+
+
   
 
 })();  
