@@ -1,0 +1,7 @@
+{
+  "name": "visacareerhub",
+  "description": "Visa Career Hub website",
+  "require": {
+    "php": "^8.0"
+  }
+} 
